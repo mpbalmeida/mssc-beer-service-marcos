@@ -2,8 +2,10 @@ package dev.marcosalmeida.msscbeerservice.web.controller;
 
 import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.UUID;
 
 @RequestMapping("/api/v1/beer")
@@ -20,8 +22,10 @@ public class BeerController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public void createBeer(@RequestBody BeerDto beer) {
+    public ResponseEntity createBeer(@RequestBody BeerDto beer) {
         //TODO Implement services
+
+        return ResponseEntity.created(URI.create("/api/v1/beer/")).build();
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
