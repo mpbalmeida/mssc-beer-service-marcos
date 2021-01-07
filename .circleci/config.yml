@@ -41,7 +41,7 @@ jobs:
           key: v1-gradle-cache-{{ checksum "build.gradle.kts" }}
 
       # run tests!
-      - run: ./gradlew test
+      - run: ./gradlew clean test jacocoTestReport
 
       - run:
           name: Send to Codecov
