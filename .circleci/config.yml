@@ -28,7 +28,7 @@ jobs:
           keys:
             - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-gradle-cache-{{ checksum "build.gradle" }}
+            - v1-gradle-cache-{{ checksum "build.gradle.kts" }}
 
       - save_cache:
           paths:
@@ -38,7 +38,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle/caches
-          key: v1-gradle-cache-{{ checksum "build.gradle" }}
+          key: v1-gradle-cache-{{ checksum "build.gradle.kts" }}
 
       # run tests!
       - run: ./gradlew test
