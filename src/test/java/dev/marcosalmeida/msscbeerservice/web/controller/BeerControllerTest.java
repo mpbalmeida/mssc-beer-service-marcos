@@ -52,6 +52,24 @@ class BeerControllerTest {
     }
 
     @Test
+    void updateBeer() throws Exception {
+
+        var body = BeerDto.builder()
+                .beerName("Nigh cat")
+                .beerStyle(BeerStyleEnum.IPA)
+                .price(BigDecimal.valueOf(21.99))
+                .upc(22L)
+                .build();
+
+
+        mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID())
+                .content(objectMapper.writeValueAsString(body))
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
     void deleteBeer() throws Exception {
         mockMvc.perform(delete("/api/v1/beer/" + UUID.randomUUID().toString())
                 .accept(MediaType.APPLICATION_JSON))
