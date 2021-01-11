@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Data
@@ -31,7 +31,7 @@ public class BeerDto {
     @NotNull
     @Positive
     private Long upc;
-    
+
     @NotNull
     @Positive
     private BigDecimal price;
@@ -42,8 +42,8 @@ public class BeerDto {
     private Integer version;
 
     @Null
-    private Instant createdDate;
+    private OffsetDateTime createdDate;
 
     @Null
-    private Instant lastModifiedDate;
+    private OffsetDateTime lastModifiedDate;
 }
