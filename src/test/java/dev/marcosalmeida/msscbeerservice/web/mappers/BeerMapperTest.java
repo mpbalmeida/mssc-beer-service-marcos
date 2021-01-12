@@ -1,8 +1,8 @@
 package dev.marcosalmeida.msscbeerservice.web.mappers;
 
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
+import dev.marcosalmeida.msscbeerservice.test.util.BeerTest;
 import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class BeerMapperTest {
+class BeerMapperTest extends BeerTest {
 
     @Autowired
     BeerMapper beerMapper;
@@ -24,17 +24,11 @@ class BeerMapperTest {
     @BeforeEach
     void setUp() {
         var uuid = UUID.randomUUID();
-        validBeer = Beer.builder().id(uuid)
-                .beerName("Beer1")
-                .beerStyle("PALE_ALE")
-                .upc(123456789012L)
-                .build();
+        validBeer = getValidBeer();
+        validBeer.setId(uuid);
 
-        validBeerDto = BeerDto.builder().id(uuid)
-                .beerName("Beer1")
-                .beerStyle(BeerStyleEnum.PALE_ALE)
-                .upc(123456789012L)
-                .build();
+        validBeerDto = getValidDto();
+        validBeerDto.setId(uuid);
     }
 
     @Test
