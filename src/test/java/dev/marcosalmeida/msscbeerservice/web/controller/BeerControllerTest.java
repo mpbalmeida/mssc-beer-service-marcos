@@ -35,16 +35,18 @@ class BeerControllerTest {
     @Test
     void createBeer() throws Exception {
 
-        var body = BeerDto.builder()
+        var dto = BeerDto.builder()
                 .beerName("Nigh cat")
                 .beerStyle(BeerStyleEnum.IPA)
                 .price(BigDecimal.valueOf(21.99))
                 .upc(22L)
                 .build();
 
+        var body = objectMapper.writeValueAsString(dto);
+
 
         mockMvc.perform(post("/api/v1/beer")
-                .content(objectMapper.writeValueAsString(body))
+                .content(body)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
