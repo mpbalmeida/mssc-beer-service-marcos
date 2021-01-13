@@ -1,5 +1,6 @@
 package dev.marcosalmeida.msscbeerservice.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,9 +30,9 @@ public class BeerDto {
     private BeerStyleEnum beerStyle;
 
     @NotNull
-    @Positive
-    private Long upc;
+    private String upc;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     @NotNull
     @Positive
     private BigDecimal price;
