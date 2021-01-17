@@ -4,12 +4,12 @@ import dev.marcosalmeida.msscbeerservice.domain.Beer;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @RequiredArgsConstructor
-@Component
+// Removing bootstrap to give place to data.sql in order to have fixed ids for http test
+//@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "0631234200036";
