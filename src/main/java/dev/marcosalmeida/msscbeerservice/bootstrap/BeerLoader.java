@@ -20,7 +20,23 @@ public class BeerLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        loadBeerObjects();
+//        loadBeerObjects();
+        loadBeerPerformanceObjects();
+    }
+
+    private void loadBeerPerformanceObjects() {
+        if (beerRepository.count() == 3) {
+            for (int i = 0; i < 100_000_000; i++) {
+                beerRepository.save(Beer.builder()
+                        .beerName("Mango Bobs" + i)
+                        .beerStyle("IPA")
+                        .quantityToBrew(200)
+                        .minOnHand(12)
+                        .upc(Long.valueOf(BEER_1_UPC + i).toString())
+                        .price(new BigDecimal("12.95"))
+                        .build());
+            }
+        }
     }
 
     private void loadBeerObjects() {

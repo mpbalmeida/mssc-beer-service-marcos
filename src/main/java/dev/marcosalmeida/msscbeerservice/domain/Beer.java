@@ -2,12 +2,10 @@ package dev.marcosalmeida.msscbeerservice.domain;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -21,6 +19,9 @@ import java.util.UUID;
 public class Beer {
 
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(length = 16, columnDefinition = "BINARY", updatable = false, nullable = false)
 //  FOR STORING VARCHAR INSTEAD OF BINARY
 //    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
 //    @Type(type = "uuid-char")
