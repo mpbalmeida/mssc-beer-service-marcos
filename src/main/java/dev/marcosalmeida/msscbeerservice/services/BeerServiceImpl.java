@@ -28,7 +28,7 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public BeerDto getById(UUID id) {
         return beerRepository.findById(id)
-                .map(beerMapper::beerToBeerDto)
+                .map(beerMapper::beerToBeerDtoWithInventory)
                 .orElseThrow(NotFoundException::new);
     }
 
@@ -65,7 +65,7 @@ public class BeerServiceImpl implements BeerService {
         return new BeerPagedList(beerPage
                 .getContent()
                 .stream()
-                .map(beerMapper::beerToBeerDto)
+                .map(beerMapper::beerToBeerDtoWithInventory)
                 .collect(Collectors.toList()),
                 PageRequest
                         .of(beerPage.getPageable().getPageNumber(),
