@@ -26,14 +26,16 @@ public class BeerController {
     public BeerPagedList listBeers(@RequestParam(value = "pageNumber", required = false, defaultValue = "0") Integer pageNumber,
                                    @RequestParam(value = "pageSize", required = false, defaultValue = "25") Integer pageSize,
                                    @RequestParam(value = "beerName", required = false) String beerName,
-                                   @RequestParam(value = "beerStyle", required = false) BeerStyleEnum beerStyle) {
-        return beerService.listBeers(beerName, beerStyle, PageRequest.of(pageNumber, pageSize));
+                                   @RequestParam(value = "beerStyle", required = false) BeerStyleEnum beerStyle,
+                                   @RequestParam(value = "showInventoryOnHand", required = false, defaultValue = "false") Boolean showInventoryOnHand) {
+        return beerService.listBeers(beerName, beerStyle, PageRequest.of(pageNumber, pageSize), showInventoryOnHand);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
-    public BeerDto findById(@PathVariable("id") UUID id) {
-        return beerService.getById(id);
+    public BeerDto findById(@PathVariable("id") UUID id,
+                            @RequestParam(value = "showInventoryOnHand", required = false, defaultValue = "false") Boolean showInventoryOnHand) {
+        return beerService.getById(id, showInventoryOnHand);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
