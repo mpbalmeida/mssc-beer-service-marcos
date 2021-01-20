@@ -24,8 +24,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-cache")
 
     implementation("org.mapstruct:mapstruct:${mapStructVersion}")
+    implementation("javax.cache:cache-api")
+    implementation("org.ehcache:ehcache")
 
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
