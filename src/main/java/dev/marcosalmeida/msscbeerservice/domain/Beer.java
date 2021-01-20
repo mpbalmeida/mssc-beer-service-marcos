@@ -16,6 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(indexes = @Index(columnList = "upc"))
 public class Beer {
 
     @Id
