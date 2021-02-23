@@ -1,4 +1,24 @@
-GET http://localhost:8080/api/v1/beer/97a795ed-8834-4b98-9d37-98a4b4d07da7
+GET http://localhost:8080/api/v1/beer/0a818933-087d-47f2-ad83-2f986ed087eb?showInventoryOnHand=true
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/beer/
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/beer?beerName=Mango Bobs
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/beer?beerStyle=IPA
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/beer?pageSize=1
 Accept: application/json
 
 ###
@@ -15,7 +35,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/api/v1/beer/97a795ed-8834-4b98-9d37-98a4b4d07da7
+PUT http://localhost:8080/api/v1/beer/0a818933-087d-47f2-ad83-2f986ed087eb
 Content-Type: application/json
 
 {

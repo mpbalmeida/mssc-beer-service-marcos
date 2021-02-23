@@ -21,7 +21,10 @@ public class Beer {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+    @Column(length = 16, columnDefinition = "BINARY", updatable = false, nullable = false)
+//  FOR STORING VARCHAR INSTEAD OF BINARY
+//    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+//    @Type(type = "uuid-char")
     private UUID id;
 
     @Version

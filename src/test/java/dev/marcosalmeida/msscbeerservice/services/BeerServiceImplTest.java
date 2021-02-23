@@ -40,13 +40,13 @@ class BeerServiceImplTest extends BeerTest {
     void getById() {
         var id = UUID.randomUUID();
         given(beerRepository.findById(any())).willReturn(Optional.of(getValidBeer()));
-        given(beerMapper.beerToBeerDto(any())).willReturn(getValidDto());
+        given(beerMapper.beerToBeerDtoWithInventory(any())).willReturn(getValidDto());
 
-        BeerDto dto = service.getById(id);
+        BeerDto dto = service.getById(id, true);
 
         assertEquals(getValidDto(), dto);
         then(beerRepository).should(times(1)).findById(any());
-        then(beerMapper).should(times(1)).beerToBeerDto(any());
+        then(beerMapper).should(times(1)).beerToBeerDtoWithInventory(any());
         then(beerRepository).shouldHaveNoMoreInteractions();
         then(beerMapper).shouldHaveNoMoreInteractions();
     }
@@ -56,7 +56,7 @@ class BeerServiceImplTest extends BeerTest {
         var id = UUID.randomUUID();
         given(beerRepository.findById(any())).willReturn(Optional.empty());
 
-        assertThrows(NotFoundException.class, () -> service.getById(id));
+        assertThrows(NotFoundException.class, () -> service.getById(id, true));
 
         then(beerRepository).should(times(1)).findById(any());
         then(beerRepository).shouldHaveNoMoreInteractions();
