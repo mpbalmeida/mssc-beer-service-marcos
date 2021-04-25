@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 // Removing bootstrap to give place to data.sql in order to have fixed ids for http test
-@Component
+//@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "0631234200036";

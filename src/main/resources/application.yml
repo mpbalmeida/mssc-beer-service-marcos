@@ -8,3 +8,6 @@ spring:
   cache:
     jcache:
       config: classpath:ehcache.xml
+logging:
+  level:
+    dev.marcosalmeida: debug
