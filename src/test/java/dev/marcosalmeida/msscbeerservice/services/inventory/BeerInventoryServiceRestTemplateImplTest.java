@@ -1,6 +1,5 @@
 package dev.marcosalmeida.msscbeerservice.services.inventory;
 
-import dev.marcosalmeida.msscbeerservice.bootstrap.BeerLoader;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,8 @@ class BeerInventoryServiceRestTemplateImplTest {
 
     @Test
     void getOnHandInventory() {
-        Integer onHandInventory = beerInventoryService.getOnHandInventory(BeerLoader.BEER_1_UUID);
-
-        System.out.println(onHandInventory);
+//        Integer onHandInventory = beerInventoryService.getOnHandInventory(BeerLoader.BEER_1_UUID);
+//
+//        System.out.println(onHandInventory);
     }
 }

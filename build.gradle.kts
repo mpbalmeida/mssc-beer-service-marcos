@@ -1,5 +1,5 @@
 plugins {
-    id("org.springframework.boot") version "2.4.1"
+    id("org.springframework.boot") version "2.4.5"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     java
     jacoco
@@ -14,10 +14,17 @@ java {
 
 repositories {
     mavenCentral()
+    maven("https://oss.sonatype.org/content/repositories/releases/")
 }
 
-val mapStructVersion by extra("1.4.1.Final")
-val lombokMapStructVersion by extra("0.2.0")
+dependencyManagement {
+    imports {
+        mavenBom("br.com.faroltech:mssc-brewery-bom:1.0.3")
+    }
+}
+
+val mapStructVersion = dependencyManagement.importedProperties["org.mapstruct.version"]
+val lombokMapStructVersion = dependencyManagement.importedProperties["lombok.mapstruct.binding.version"]
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -25,8 +32,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation("org.springframework.boot:spring-boot-starter-artemis")
 
-    implementation("org.mapstruct:mapstruct:${mapStructVersion}")
+    implementation("org.mapstruct:mapstruct")
     implementation("javax.cache:cache-api")
     implementation("org.ehcache:ehcache")
 

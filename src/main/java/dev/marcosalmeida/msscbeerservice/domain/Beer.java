@@ -16,14 +16,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(indexes = @Index(columnList = "upc"))
 public class Beer {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 16, columnDefinition = "BINARY", updatable = false, nullable = false)
+    @Column(length = 16, columnDefinition = "BINARY(16)", updatable = false, nullable = false)
 //  FOR STORING VARCHAR INSTEAD OF BINARY
-//    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+//    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
 //    @Type(type = "uuid-char")
     private UUID id;
 

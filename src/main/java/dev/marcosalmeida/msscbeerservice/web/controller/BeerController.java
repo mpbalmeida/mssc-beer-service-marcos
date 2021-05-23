@@ -57,4 +57,10 @@ public class BeerController {
     public void deleteBeer(@PathVariable("id") UUID id) {
         //TODO Implement services
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/upc/{upc}")
+    public BeerDto findByUpc(@PathVariable("upc") String upc) {
+        return beerService.getByUpc(upc);
+    }
 }
