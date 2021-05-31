@@ -1,4 +1,4 @@
-package dev.marcosalmeida.msscbeerservice.services;
+package dev.marcosalmeida.msscbeerservice.services.brewing;
 
 import dev.marcosalmeida.msscbeerservice.config.JmsConfig;
 import dev.marcosalmeida.msscbeerservice.events.BrewBeerEvent;
