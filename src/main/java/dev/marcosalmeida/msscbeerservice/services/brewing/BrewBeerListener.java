@@ -2,8 +2,8 @@ package dev.marcosalmeida.msscbeerservice.services.brewing;
 
 import dev.marcosalmeida.msscbeerservice.config.JmsConfig;
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
-import dev.marcosalmeida.msscbeerservice.events.BrewBeerEvent;
-import dev.marcosalmeida.msscbeerservice.events.NewInventoryEvent;
+import dev.marcosalmeida.common.events.BrewBeerEvent;
+import dev.marcosalmeida.common.events.NewInventoryEvent;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
 import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;

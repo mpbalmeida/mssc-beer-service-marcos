@@ -1,7 +1,7 @@
 package dev.marcosalmeida.msscbeerservice.services.brewing;
 
 import dev.marcosalmeida.msscbeerservice.config.JmsConfig;
-import dev.marcosalmeida.msscbeerservice.events.BrewBeerEvent;
+import dev.marcosalmeida.common.events.BrewBeerEvent;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
 import dev.marcosalmeida.msscbeerservice.services.inventory.BeerInventoryService;
 import dev.marcosalmeida.msscbeerservice.web.mappers.BeerMapper;
