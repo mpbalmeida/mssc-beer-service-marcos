@@ -19,7 +19,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("br.com.faroltech:mssc-brewery-bom:1.0.4")
+        mavenBom("br.com.faroltech:mssc-brewery-bom:1.0.5")
     }
 }
 

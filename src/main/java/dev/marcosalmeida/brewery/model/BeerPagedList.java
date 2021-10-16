@@ -1,4 +1,4 @@
-package dev.marcosalmeida.msscbeerservice.web.model;
+package dev.marcosalmeida.brewery.model;
 
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

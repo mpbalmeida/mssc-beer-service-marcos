@@ -1,7 +1,7 @@
 package dev.marcosalmeida.msscbeerservice.services.brewing;
 
+import dev.marcosalmeida.brewery.model.events.BrewBeerEvent;
 import dev.marcosalmeida.msscbeerservice.config.JmsConfig;
-import dev.marcosalmeida.common.events.BrewBeerEvent;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
 import dev.marcosalmeida.msscbeerservice.services.inventory.BeerInventoryService;
 import dev.marcosalmeida.msscbeerservice.web.mappers.BeerMapper;
@@ -23,15 +23,15 @@ public class BrewingService {
 
     @Scheduled(fixedRate = 5000) // every 5 seconds
     public void checkForLowInventory() {
-         beerRepository.findAll().forEach(beer -> {
-             Integer onHandInventory = beerInventoryService.getOnHandInventory(beer.getId());
+        beerRepository.findAll().forEach(beer -> {
+            Integer onHandInventory = beerInventoryService.getOnHandInventory(beer.getId());
 
-             log.debug("Min onhand is {}", beer.getMinOnHand());
-             log.debug("Inventory is {}", onHandInventory);
+            log.debug("Min onhand is {}", beer.getMinOnHand());
+            log.debug("Inventory is {}", onHandInventory);
 
-             if (beer.getMinOnHand() >= onHandInventory) {
-                 jmsTemplate.convertAndSend(JmsConfig.BREWING_REQUEST_QUEUE, new BrewBeerEvent(beerMapper.beerToBeerDto(beer)));
-             }
-         });
+            if (beer.getMinOnHand() >= onHandInventory) {
+                jmsTemplate.convertAndSend(JmsConfig.BREWING_REQUEST_QUEUE, new BrewBeerEvent(beerMapper.beerToBeerDto(beer)));
+            }
+        });
     }
 }

@@ -1,6 +1,6 @@
-package dev.marcosalmeida.common.events;
+package dev.marcosalmeida.brewery.model.events;
 
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
+import dev.marcosalmeida.brewery.model.BeerDto;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

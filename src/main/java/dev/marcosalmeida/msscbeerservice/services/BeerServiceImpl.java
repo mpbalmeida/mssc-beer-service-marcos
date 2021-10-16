@@ -1,12 +1,12 @@
 package dev.marcosalmeida.msscbeerservice.services;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
+import dev.marcosalmeida.brewery.model.BeerPagedList;
+import dev.marcosalmeida.brewery.model.BeerStyleEnum;
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
 import dev.marcosalmeida.msscbeerservice.web.controller.exceptions.NotFoundException;
 import dev.marcosalmeida.msscbeerservice.web.mappers.BeerMapper;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerPagedList;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;

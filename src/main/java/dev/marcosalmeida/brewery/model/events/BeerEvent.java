@@ -1,7 +1,10 @@
-package dev.marcosalmeida.common.events;
+package dev.marcosalmeida.brewery.model.events;
 
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
-import lombok.*;
+import dev.marcosalmeida.brewery.model.BeerDto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 

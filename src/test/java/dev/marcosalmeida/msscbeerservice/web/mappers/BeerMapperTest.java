@@ -1,8 +1,8 @@
 package dev.marcosalmeida.msscbeerservice.web.mappers;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
 import dev.marcosalmeida.msscbeerservice.test.util.BeerTest;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

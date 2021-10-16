@@ -1,8 +1,8 @@
 package dev.marcosalmeida.msscbeerservice.services;
 
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerPagedList;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerStyleEnum;
+import dev.marcosalmeida.brewery.model.BeerDto;
+import dev.marcosalmeida.brewery.model.BeerPagedList;
+import dev.marcosalmeida.brewery.model.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

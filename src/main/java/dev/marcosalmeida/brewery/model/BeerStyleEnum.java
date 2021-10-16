@@ -1,4 +1,4 @@
-package dev.marcosalmeida.msscbeerservice.web.model;
+package dev.marcosalmeida.brewery.model;
 
 public enum BeerStyleEnum {
     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SAISON

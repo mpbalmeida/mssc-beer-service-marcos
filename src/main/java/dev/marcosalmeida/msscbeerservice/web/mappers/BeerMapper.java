@@ -1,7 +1,7 @@
 package dev.marcosalmeida.msscbeerservice.web.mappers;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

@@ -1,11 +1,11 @@
 package dev.marcosalmeida.msscbeerservice.services.brewing;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
+import dev.marcosalmeida.brewery.model.events.BrewBeerEvent;
+import dev.marcosalmeida.brewery.model.events.NewInventoryEvent;
 import dev.marcosalmeida.msscbeerservice.config.JmsConfig;
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
-import dev.marcosalmeida.common.events.BrewBeerEvent;
-import dev.marcosalmeida.common.events.NewInventoryEvent;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;

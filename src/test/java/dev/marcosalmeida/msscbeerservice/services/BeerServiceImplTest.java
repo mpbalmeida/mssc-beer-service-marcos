@@ -1,10 +1,10 @@
 package dev.marcosalmeida.msscbeerservice.services;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
 import dev.marcosalmeida.msscbeerservice.repository.BeerRepository;
 import dev.marcosalmeida.msscbeerservice.test.util.BeerTest;
 import dev.marcosalmeida.msscbeerservice.web.controller.exceptions.NotFoundException;
 import dev.marcosalmeida.msscbeerservice.web.mappers.BeerMapper;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

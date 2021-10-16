@@ -1,4 +1,4 @@
-package dev.marcosalmeida.msscbeerservice.web.model;
+package dev.marcosalmeida.brewery.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

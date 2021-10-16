@@ -1,9 +1,9 @@
 package dev.marcosalmeida.msscbeerservice.test.util;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
+import dev.marcosalmeida.brewery.model.BeerStyleEnum;
 import dev.marcosalmeida.msscbeerservice.bootstrap.BeerLoader;
 import dev.marcosalmeida.msscbeerservice.domain.Beer;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerStyleEnum;
 
 import java.math.BigDecimal;
 

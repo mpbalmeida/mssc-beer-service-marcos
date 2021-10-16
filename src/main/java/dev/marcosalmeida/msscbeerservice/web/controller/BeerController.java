@@ -1,9 +1,9 @@
 package dev.marcosalmeida.msscbeerservice.web.controller;
 
+import dev.marcosalmeida.brewery.model.BeerDto;
+import dev.marcosalmeida.brewery.model.BeerPagedList;
+import dev.marcosalmeida.brewery.model.BeerStyleEnum;
 import dev.marcosalmeida.msscbeerservice.services.BeerService;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerDto;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerPagedList;
-import dev.marcosalmeida.msscbeerservice.web.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
